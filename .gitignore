@@ -5,3 +5,4 @@ bin/*
 obj/*
 upload/*
 .svn/*
+*.suo
