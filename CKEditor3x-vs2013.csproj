@@ -228,6 +228,9 @@
     <Content Include="WordPaster\js\skygqbox.js" />
     <Content Include="WordPaster\css\paster.png" />
     <Content Include="WordPaster\error.png" />
+    <Content Include="WordPaster\js\w.app.js" />
+    <Content Include="WordPaster\js\w.edge.js" />
+    <Content Include="WordPaster\js\w.file.js" />
     <Content Include="WordPaster\setup\1.gif" />
     <Content Include="WordPaster\setup\2.gif" />
     <Content Include="WordPaster\setup\3.gif" />
