@@ -7,3 +7,4 @@ upload
 .svn
 *.user
 *.suo
+/CKEditor3x-vs2013.csproj.user
