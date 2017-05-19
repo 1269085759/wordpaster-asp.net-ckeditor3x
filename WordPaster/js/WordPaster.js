@@ -293,7 +293,7 @@ function WordPasterManager()
             {
                 _this.parter = _this.ffPaster;
                 if (_this.ie) _this.parter = _this.ieParser;
-                if (_this.ie || _this.firefox) _this.parter.recvMessage = _this.recvMessage;
+                _this.parter.recvMessage = _this.recvMessage;
             }
             _this.setup_tip();
             if (_this.edge) {
