@@ -5,8 +5,12 @@
     <title>CKEditor3.x多编辑器示例</title>
     <link type="text/css" rel="Stylesheet" href="WordPaster/css/WordPaster.css"/>
     <link type="text/css" rel="stylesheet" href="WordPaster/js/skygqbox.css" />
+    <script type="text/javascript" src="WordPaster/js/json2.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="WordPaster/js/jquery-1.4.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="WordPaster/js/skygqbox.js" charset="utf-8"></script>
+    <script type="text/javascript" src="WordPaster/js/w.edge.js" charset="utf-8"></script>
+    <script type="text/javascript" src="WordPaster/js/w.app.js" charset="utf-8"></script>
+    <script type="text/javascript" src="WordPaster/js/w.file.js" charset="utf-8"></script>
 	<script type="text/javascript" src="WordPaster/js/WordPaster.js" charset="utf-8"></script>
 	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 </head>
@@ -32,13 +36,13 @@
 	<p>编辑器2</p>
 	<textarea id="editor2" name="editor2"></textarea>
 	<script type="text/javascript">
-		var pasterMgr = new PasterManager();
+        var pasterMgr = new WordPasterManager();
 		pasterMgr.Config["PostUrl"] = "http://localhost:2797/asp.net/upload.aspx"
 		pasterMgr.Load(); //加载控件
 
 		CKEDITOR.on('instanceReady', function(evt)
 		{
-			pasterMgr.Init(evt.editor);
+		    pasterMgr.SetEditor(evt.editor);
 		});
 
 		CKEDITOR.on('currentInstance', function()
@@ -48,11 +52,11 @@
 		        pasterMgr.SetEditor(CKEDITOR.currentInstance);
 		    }
 		});
+		CKEDITOR.config.extraPlugins = 'imagepaster,netpaster';
 		
 		//加载CKEditor编辑器
 		CKEDITOR.replace('editor1',
          {
-         	extraPlugins: 'imagepaster,excelpaster',
          	toolbar:
               [
                    ['Source', 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink'],
@@ -62,7 +66,6 @@
 		//加载CKEditor编辑器
 		CKEDITOR.replace('editor2',
          {
-         	extraPlugins: 'imagepaster,excelpaster',
          	toolbar:
               [
                    ['Source', 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink'],
